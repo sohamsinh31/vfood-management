@@ -16,14 +16,27 @@ route.post('/', (req,res) => {
 
 
 
+// route.get('/', (req, res) => {
+//     let sql = 'SELECT * FROM faqs';
+//     let query = db.query(sql, (err, results) => {
+//       if (err) throw err;
+//       console.log(results);
+//       res.json(results); // Send the results as JSON response
+//     });
+//   });
 route.get('/', (req, res) => {
-    let sql = 'SELECT * FROM faqs';
-    let query = db.query(sql, (err, results) => {
-      if (err) throw err;
-      console.log(results);
-      res.json(results); // Send the results as JSON response
-    });
+  let condition = ""; 
+  console.log(req.query.FAQID + "\n\n")  
+  if (req.query.FAQID) {
+    condition = `WHERE faqId = ${req.query.FAQID}`; 
+  }  
+  let sql = `SELECT * FROM  faqs ${condition}`;
+  let query = db.query(sql, (err, results) => {
+    if (err) throw err;
+    // console.log(results);
+    res.json(results);
   });
+});
 
 
 module.exports = route;

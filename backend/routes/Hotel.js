@@ -14,11 +14,27 @@ router.post('/', (req, res) => {
   });
 });
 
+// router.get('/', (req, res) => {
+//   let sql = 'SELECT * FROM restaurant';
+//   let query = db.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
+
+
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM restaurant';
+  let condition = ""; 
+  console.log(req.query.RestaurantID + "\n\n")  
+  if (req.query.RestaurantID) {
+    condition = `WHERE restaurantId = ${req.query.RestaurantID}`; 
+  }  
+  let sql = `SELECT * FROM restaurant ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
+    // console.log(results);
     res.json(results);
   });
 });

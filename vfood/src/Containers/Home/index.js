@@ -5,13 +5,14 @@ import Text from '../../Components/Welcome/Text'
 import InnerCard from '../../Components/Card/InnerCard'
 import Filter from '../../Components/Filter/Filter'
 
-import { getData, postData } from '../../Services/Home'
+// import { getData, postData } from '../../Services/Home'
 
-const [data,setData] = useEffect([])
+// const [data,setData] = useEffect([]);
 
-useEffect(() => { 
+// useEffect(() => { 
+//   setData(getData())
+// });
 
-});
 const Home = () => {
   return (
     <div>

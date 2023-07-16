@@ -14,11 +14,25 @@ router.post('/', (req, res) => {
   });
 });
 
+// router.get('/', (req, res) => {
+//   let sql = 'SELECT * FROM delivery';
+//   let query = db.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM delivery';
+  let condition = ""; 
+  console.log(req.query.DeliveryID + "\n\n")  
+  if (req.query.DeliveryID) {
+    condition = `WHERE deliveryId = ${req.query.DeliveryID}`; 
+  }  
+  let sql = `SELECT * FROM delivery ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
+    // console.log(results);
     res.json(results);
   });
 });

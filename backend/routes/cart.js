@@ -14,15 +14,28 @@ router.post('/', (req, res) => {
   });
 });
 
+// router.get('/', (req, res) => {
+//   let sql = 'SELECT * FROM cart';
+//   let query = db.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM cart';
+  let condition = ""; 
+  console.log(req.query.CartID + "\n\n")  
+  if (req.query.CartID) {
+    condition = `WHERE cartId = ${req.query.CartID}`; 
+  }  
+  let sql = `SELECT * FROM cart ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
+    // console.log(results);
     res.json(results);
   });
 });
-
 
 
 module.exports = router;

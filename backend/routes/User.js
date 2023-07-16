@@ -14,11 +14,25 @@ router.post('/', (req, res) => {
   });
 });
 
+// router.get('/', (req, res) => {
+//   let sql = 'SELECT * FROM user';
+//   let query = db.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM user';
+  let condition = ""; 
+  console.log(req.query.UserID + "\n\n")  
+  if (req.query.UserID) {
+    condition = `WHERE userId = ${req.query.UserID}`; 
+  }  
+  let sql = `SELECT * FROM user ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
+    // console.log(results);
     res.json(results);
   });
 });

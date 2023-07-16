@@ -14,15 +14,28 @@ router.post('/', (req, res) => {
   });
 });
 
+// router.get('/', (req, res) => {
+//   let sql = 'SELECT * FROM category';
+//   let query = db.query(sql, (err, results) => {
+//     if (err) throw err;
+//     console.log(results);
+//     res.json(results);
+//   });
+// });
+
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM category';
+  let condition = ""; 
+  console.log(req.query.CategoryID + "\n\n")  
+  if (req.query.CategoryID) {
+    condition = `WHERE categoryId = ${req.query.CategoryID}`; 
+  }  
+  let sql = `SELECT * FROM category ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
+    // console.log(results);
     res.json(results);
   });
 });
-
 
 
 module.exports = router;

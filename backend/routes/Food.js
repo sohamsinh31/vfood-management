@@ -14,15 +14,28 @@ route.post('/', (req, res) => {
   });
 });
 
-route.get('/', (req, res) => {
-    let sql = 'SELECT * FROM food';
-    let query = db.query(sql, (err, results) => {
-      if (err) throw err;
-      console.log(results);
-      res.json(results); // Send the results as JSON response
-    });
-  });
+// route.get('/', (req, res) => {
+//     let sql = 'SELECT * FROM food';
+//     let query = db.query(sql, (err, results) => {
+//       if (err) throw err;
+//       console.log(results);
+//       res.json(results); // Send the results as JSON response
+//     });
+//   });
 
+route.get('/', (req, res) => {
+  let condition = ""; 
+  console.log(req.query.FoodID + "\n\n")  
+  if (req.query.FoodID) {
+    condition = `WHERE foodId = ${req.query.FoodID}`; 
+  }  
+  let sql = `SELECT * FROM food ${condition}`;
+  let query = db.query(sql, (err, results) => {
+    if (err) throw err;
+    // console.log(results);
+    res.json(results);
+  });
+});
   
 
 

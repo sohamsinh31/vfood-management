@@ -1,0 +1,50 @@
+.container{
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cardMain{
+    margin: 0%;
+    padding: 0%;
+    text-align: center;  
+}
+.previous{
+    align-items: center;
+}
+h3{
+    text-align: left;
+    margin: 3%;
+}
+table, th, td {
+    border: 1px solid;
+}
+table{
+    width: 90%;
+    margin-left: 5%;
+}
+#ques{
+    display: flex;
+    justify-content: space-between;
+}
+#ques>.cardMain{
+    display: inline;
+    width: 47%;
+    margin: 0%;
+}
+img{
+    margin-top: 26px;
+}
+.hotel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    
+}
+.contact{
+    display: flex;
+    justify-content: space-between;
+}
