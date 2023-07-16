@@ -6,15 +6,17 @@ import SignUp from './Containers/SignUp/SignUp';
 import Info from "./Containers/Info/Info"
 import Description from './Containers/Description/Description';
 import Faq from './Containers/FAQ/Faq';
+import Profile from './Containers/Profile/Profile';
 
 const App = () => (
     <div style={{ height: '100%' }}>
-        {/* <Home /> */}
+        <Home />
         {/* <Description /> */}
         {/* <Info /> */}
         {/* <SignUp /> */}
         {/* <Login/> */}
-        <Faq />
+        {/* <Faq /> */}
+        {/* <Profile /> */}
     </div>
 );
 export default App;

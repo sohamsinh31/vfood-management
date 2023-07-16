@@ -35,9 +35,6 @@ table{
     width: 47%;
     margin: 0%;
 }
-img{
-    margin-top: 26px;
-}
 .hotel{
     display: flex;
     justify-content: space-between;

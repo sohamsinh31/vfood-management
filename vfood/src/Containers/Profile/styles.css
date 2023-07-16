@@ -1,0 +1,49 @@
+.container2{
+    height: 100hv;
+    background-color: #C4ADE9;
+}
+.purplebox{
+    background-color: #3C2365;
+    height: 40%;
+    border-bottom-left-radius: 10%;
+    border-end-end-radius: 10%;
+    display: flex;
+    justify-content: center;
+}
+.pimg{
+    padding: 20%;
+}
+.Loc{
+    display: flex;
+    gap: 10%;
+    margin-bottom: 5%;
+}
+.pno{
+    display: flex;
+    gap: 10%;
+    margin-bottom: 5%;
+
+}
+.history{
+    display: flex;
+    gap: 10%;
+    margin-bottom: 5%;;
+
+}
+.reward{
+    display: flex;
+    gap: 10%;
+    margin-bottom: 5%;
+
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+    padding-right: 20%;
+    
+}
+.h3{
+    color: #3C2365;
+    font-weight: bold;
+}

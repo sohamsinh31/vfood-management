@@ -1,28 +1,38 @@
 import { useState, useEffect } from "react";
 import { url, port } from "./Constant"
-import axios from "axios";
 
-const [data, setData] = useState([]);
 
-const getData = async() => {
+
+
+const getData = async () => {
     try {
-        const response = await axios.get(url + port + "/hotel");
-        //console.log(response.data);
-        return response.data;
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
-}
-
-const postData = async() => { 
-    try {
-        const response = await axios.get(url + port + "/hotel");
-        //console.log(response.data);
-        setData(response.data)
+        const response = await fetch(url + port + "/hotel");
+        const data = await response.json();
+        return data;
     } catch (error) {
         console.error(error);
+        return null;
     }
 }
 
-export { getData ,postData };
+const postData = async (data) => {
+    try {
+        const response = await fetch(url + port + "/hotel", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+        const responseData = await response.json();
+        return responseData;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+export { getData, postData };

@@ -7,7 +7,7 @@ const Filter = () => {
         <div className='ftrmain'>
             <Card className="filterbtn" height={79} width={81}>
                 <img className='ftrimg' alt='filter' src='Assets/filter.png'/>
-                <h4 className='text'>Filter</h4>  
+                <h4 className='text2'>Filter</h4>  
             </Card>
             <div className="v2"></div>
         </div>
