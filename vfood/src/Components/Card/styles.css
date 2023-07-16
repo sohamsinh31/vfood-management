@@ -1,0 +1,25 @@
+@media (min-width: 768px) {
+  .cardMain {
+    background-color: red;
+  }
+}
+
+.foodImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.vl {
+  float: left;
+  border-left: 6px solid rgb(183, 223, 21);
+  height: 29px;
+}
+.goldtxt {
+  background: -webkit-linear-gradient(#D4CF4C,#eeeb90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

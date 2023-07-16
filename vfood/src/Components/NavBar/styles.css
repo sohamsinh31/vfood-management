@@ -1,0 +1,35 @@
+.mainNavbar{
+    background-color: #3C2365 !important;
+    opacity: 75%;
+    margin: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoImage {
+    width: 35px;
+    height: 65px;
+}
+
+::placeholder {
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+.logoImage {
+    width: 35px;
+    height: 65px;
+}
+
+.navInput {
+   border: white solid;
+   border-radius: 9px;
+   background-color: rgba(97, 75, 75, 0.5);
+   height: max-content;
+   width: 50%;
+   height: 31px;
+   opacity: 85%;
+   color: white;
+}

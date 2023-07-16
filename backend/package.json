@@ -1,0 +1,24 @@
+{
+  "name": "mern-backend",
+  "version": "1.0.0",
+  "description": "from sohamsinh",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "Borasia sohamsinh jitendrasinh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "connect-memcached": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "file-loader": "^6.2.0",
+    "mongoose": "^6.6.5",
+    "mysql2": "^3.5.1",
+    "nodemon": "^2.0.20",
+    "url-loader": "^4.1.1"
+  }
+}

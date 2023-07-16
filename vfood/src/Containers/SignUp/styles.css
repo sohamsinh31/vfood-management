@@ -1,0 +1,41 @@
+.ctext{
+    margin: 28px;
+}
+
+.login {
+    margin-top: 20%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.sigup {
+    margin: 0%;
+    padding-top: 15px;
+    
+}
+.cardMain{
+    padding-left: 10%;
+    margin-left: 5%;
+    padding-top: 0px;
+    
+
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50%;
+    margin-top: 30%;
+}
+.submit {
+    height: 60px;
+    width: 60px;
+    background-color: #3C2365;
+    color: white;
+    size: 250px;
+    border-radius: 100px;
+}
+.signin{
+    margin-left: 20px;
+
+}
