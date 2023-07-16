@@ -12,7 +12,10 @@ const Description = () => {
       <Card height={32}  >
         <Goldcard text1={"Tomato pizza"} text2={"9$"} />
         </Card>
-        <Card height={129}/>
+        <Card height={129}>
+          <h2 className='goldt'>Description:-</h2>
+          <h4></h4>
+        </Card>
     </div>
   )
 }

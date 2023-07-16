@@ -1,22 +1,28 @@
-const Express = require('express')
+const express = require('express');
+const router = express.Router();
+const db = require('../Connection/connect');
 const mysql = require('mysql2');
-const db = require("../Connection/connect.js")
-const route = Express.Router()
 
-route.get('/',async (req,res)=>{
-    let sql = 'SELECT * FROM user';
-    let query = db.query(sql, (err, results) => {
-      if (err) throw err;
-      console.log(results);
-      res.json(results); // Send the results as JSON response
-    });
-})
 
-route.post('/',async (req,res)=>{
-    try{
-    }catch(err){
-    }
-})
+router.post('/', (req, res) => {
+  const data = req.body; 
+  let sql = 'INSERT INTO user SET ?';
+  let query = db.query(sql, data, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send('Inserted successfully');
+  });
+});
 
-module.exports = route;
+router.get('/', (req, res) => {
+  let sql = 'SELECT * FROM user';
+  let query = db.query(sql, (err, results) => {
+    if (err) throw err;
+    console.log(results);
+    res.json(results);
+  });
+});
 
+
+
+module.exports = router;

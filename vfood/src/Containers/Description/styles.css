@@ -7,3 +7,9 @@
     top: 13px;
     left: 13px;
 }
+
+.goldt {
+    background: -webkit-linear-gradient(#D4CF4C,#eeeb90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

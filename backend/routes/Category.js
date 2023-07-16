@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 
 router.post('/', (req, res) => {
   let post = { title: 'Post one', body: 'This is post' };
-  let sql = 'INSERT INTO restaurant SET ?';
+  let sql = 'INSERT INTO category SET ?';
   let query = db.query(sql, post, (err, result) => {
     if (err) throw err;
     console.log(result);
@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM restaurant';
+  let sql = 'SELECT * FROM category';
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
     console.log(results);
