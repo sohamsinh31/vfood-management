@@ -9,12 +9,12 @@ const Faq = () => {
     <div className='container'>
         <div className='header'>
             <Back />
-            <div className='text'><h2>F.A.Q</h2></div>
+            <div className='text' ><h2>F.A.Q</h2></div>
         </div>
         <div className='ask'>
             <Card>
-                <div className='bimg'><img src="Assets/bing.png" /></div>
-                <div><h2>ASK QUESTIONS</h2></div>
+                <div className='bimg'><img src="Assets/bing.png" className='bingstyle' /></div>
+                <div classname='headeroffaq'><h2>ASK QUESTIONS</h2></div>
                 <div className='sendimg'><img src="Assets/send.png" /></div>
             </Card>
         </div>

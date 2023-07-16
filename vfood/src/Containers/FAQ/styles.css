@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     height: 100hv;
 }
@@ -15,21 +16,56 @@
 }
 
 .previous{
+=======
+.container {
+    padding: 20px;
+  }
+  
+  .text {
+    margin: 0;
+>>>>>>> 8178d1cc2f926b8a30aced927b29af4bec82632b
     text-align: center;
-    
-}
-.ask>.cardMain{
+  }
+  
+  .header {
     display: flex;
-    height: 50px;
     justify-content: space-between;
-
-}
-p{
-    margin-left:1rem ;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .ask {
+    width: 100%;
+  }
+  
+  .bimg,
+  .sendimg {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px; /* Adjust the value as needed */
+  }
+  
+  .bingstyle{
+    margin: bottom 51%;
+    width: min-content;
+  }
+  
+  .ques {
+    margin-bottom: 20px;
+  }
+  
+  .cardMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  p {
+    margin: 0;
     text-align: left;
-}
-.ques>.cardMain{
-    display: flex;
-    justify-content: space-between;
-
-}
+  }
+  
+  .previous {
+    text-align: center;
+  }
+  
