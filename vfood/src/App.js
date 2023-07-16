@@ -15,7 +15,7 @@ const App = () => (
         {/* <Info /> */}
         {/* <SignUp /> */}
         {/* <Login/> */}
-        <Faq />
+        {/* <Faq /> */}
         {/* <Profile /> */}
     </div>
 );
