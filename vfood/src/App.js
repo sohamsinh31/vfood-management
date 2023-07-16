@@ -5,6 +5,7 @@ import Login from './Containers/Login/Login';
 import SignUp from './Containers/SignUp/SignUp';
 import Info from "./Containers/Info/Info"
 import Description from './Containers/Description/Description';
+import Faq from './Containers/FAQ/Faq';
 
 const App = () => (
     <div style={{ height: '100%' }}>
@@ -12,7 +13,8 @@ const App = () => (
         {/* <Description /> */}
         {/* <Info /> */}
         {/* <SignUp /> */}
-        <Login/>
+        {/* <Login/> */}
+        <Faq />
     </div>
 );
 export default App;

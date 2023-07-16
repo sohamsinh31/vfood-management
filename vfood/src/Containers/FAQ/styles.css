@@ -1,0 +1,34 @@
+.container{
+    height: 100hv;
+}
+
+.text {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.previous{
+    text-align: center;
+    
+}
+.ask>.cardMain{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+
+}
+p{
+    margin-left:1rem ;
+    text-align: left;
+}
+.ques>.cardMain{
+    display: flex;
+    justify-content: space-between;
+
+}
