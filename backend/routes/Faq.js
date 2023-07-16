@@ -5,9 +5,9 @@ const route = Express.Router()
 
 
 route.post('/', (req,res) => {
-  let post = {title:'Post one', body:'this is post'};
+  const data = req.body;
   let sql = 'INSERT INTO faqs SET?';
-  let query = db.query(sql,post,(err,result) => {
+  let query = db.query(sql,data,(err,result) => {
       if(err) throw err;
       console.log(result);
       res.send('Inserted succesfully')

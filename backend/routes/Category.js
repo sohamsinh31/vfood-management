@@ -5,9 +5,9 @@ const mysql = require('mysql2');
 
 
 router.post('/', (req, res) => {
-  let post = { title: 'Post one', body: 'This is post' };
+  const data = req.body;
   let sql = 'INSERT INTO category SET ?';
-  let query = db.query(sql, post, (err, result) => {
+  let query = db.query(sql, data, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send('Inserted successfully');
