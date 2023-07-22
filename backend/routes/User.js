@@ -5,7 +5,7 @@ const mysql = require('mysql2');
 
 
 router.post('/', (req, res) => {
-  const data = req.body; 
+  const data = req.body;
   let sql = 'INSERT INTO user SET ?';
   let query = db.query(sql, data, (err, result) => {
     if (err) throw err;
@@ -13,6 +13,36 @@ router.post('/', (req, res) => {
     res.send('Inserted successfully');
   });
 });
+
+router.post('/fetch', (req, res) => {
+  let conditions = [];
+
+  if (req.body.UserID) {
+    conditions.push(`userId = ${req.body.UserID}`);
+  }
+
+  if (req.body.email) {
+    conditions.push(`Email = '${req.body.email}'`);
+  }
+
+  if (req.body.username) {
+    conditions.push(`Name = '${req.body.username}'`);
+  }
+
+  if (req.body.password) {
+    conditions.push(`Password = '${req.body.password}'`);
+  }
+
+  // Combine all conditions using 'AND' to form the WHERE clause
+  let conditionString = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+
+  let sql = `SELECT * FROM \`user\` ${conditionString}`;
+
+  let query = db.query(sql, (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+})
 
 // router.get('/', (req, res) => {
 //   let sql = 'SELECT * FROM user';
@@ -24,18 +54,36 @@ router.post('/', (req, res) => {
 // });
 
 router.get('/', (req, res) => {
-  let condition = ""; 
-  console.log(req.query.UserID + "\n\n")  
+  let conditions = []; // An array to store individual conditions
+
   if (req.query.UserID) {
-    condition = `WHERE userId = ${req.query.UserID}`; 
-  }  
-  let sql = `SELECT * FROM user ${condition}`;
+    conditions.push(`userId = ${req.query.UserID}`);
+  }
+
+  if (req.query.email) {
+    conditions.push(`Email = '${req.query.email}'`);
+  }
+
+  if (req.query.username) {
+    conditions.push(`Name = '${req.query.username}'`);
+  }
+
+  if (req.query.password) {
+    conditions.push(`Password = '${req.query.password}'`);
+  }
+
+  // Combine all conditions using 'AND' to form the WHERE clause
+  let conditionString = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+
+  let sql = `SELECT * FROM \`user\` ${conditionString}`;
+
+
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    // console.log(results);
     res.json(results);
   });
 });
+
 
 
 

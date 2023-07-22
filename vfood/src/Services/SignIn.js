@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { url, port } from "./Constant"
 
-
-
-
 const getData = async () => {
     try {
         const response = await fetch(url + port + "/user");
@@ -17,7 +14,7 @@ const getData = async () => {
 
 const postData = async (data) => {
     try {
-        const response = await fetch(url + port + "/user", {
+        const response = await fetch(url + port + "/user/fetch", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,4 +32,4 @@ const postData = async (data) => {
     }
 }
 
-export { getData ,postData };
+export { getData, postData };

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('../public/fonts/static/Inter-Regular.ttf') format('truetype');
+    src: url('Assets/fonts/static/Inter-Regular.ttf') format('truetype');
     /* Add more src declarations for different font formats if available */
   }
   
