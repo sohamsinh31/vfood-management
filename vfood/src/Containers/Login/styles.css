@@ -1,18 +1,21 @@
 .wtext{
     margin-left: 10% !important;
     margin: 28px;
+    font-weight: 900;
 }
 
-.login {
-    margin-top: 60%;
-    margin-left: 10%;
+.loginMain {
+    margin-top: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /* width: 86%; */
 }
 
-.sigin {
+.siginLink {
     margin-top: 35%;
     float: left;
 }
-.submit {
+.submitLogin {
     margin-top: 31%;
     font-size: larger;
     font-weight: bolder;
@@ -26,8 +29,20 @@
     margin-bottom: 7px;
 }
 
+.loginMain input::placeholder {
+    text-align: left;
+    font-size: 20px;
+}
+
 .outer {
+    margin-top: 20%;
     margin-left: 10%;
+    margin-right: 10%;
+}
+
+.outer2{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .signup {

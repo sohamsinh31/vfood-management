@@ -9,12 +9,12 @@ import Faq from './Containers/FAQ/Faq';
 import Profile from './Containers/Profile/Profile';
 
 const App = () => (
-    <div style={{ height: '100%' }}>
-        <Home />
+    <div style={{minHeight:'100vh'}} >
+        {/* <Home /> */}
         {/* <Description /> */}
         {/* <Info /> */}
         {/* <SignUp /> */}
-        {/* <Login/> */}
+        <Login/>
         {/* <Faq /> */}
         {/* <Profile /> */}
     </div>

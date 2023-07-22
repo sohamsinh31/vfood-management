@@ -8,7 +8,7 @@ const cartRoutes = require('./routes/cart');
 
 const Hotel = require('./routes/Hotel')
 
-const food = require("./routes/food")
+const food = require("./routes/Food")
 
 const Order = require('./routes/Order')
 
@@ -18,11 +18,11 @@ const User = require('./routes/User')
 
 const Faq = require('./routes/Faq')
 
-const Hotelrating = require('./routes/hotelrating')
+const Hotelrating = require('./routes/Hotelrating')
 
-const Foodrating = require('./routes/foodrating')
+const Foodrating = require('./routes/Foodrating')
 
-const Category = require('./routes/category')
+const Category = require('./routes/Category')
 
 const Delivery = require('./routes/Delivery')
 
