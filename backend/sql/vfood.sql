@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 16, 2023 at 12:27 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Host: localhost:3306
+-- Generation Time: Jul 23, 2023 at 10:14 AM
+-- Server version: 8.0.33-0ubuntu0.22.04.2
+-- PHP Version: 8.1.2-1ubuntu2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `CartID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `FoodID` int(5) NOT NULL
+  `CartID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `FoodID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -49,18 +49,19 @@ INSERT INTO `cart` (`CartID`, `UserID`, `FoodID`) VALUES
 --
 
 CREATE TABLE `category` (
-  `CategoryID` int(5) NOT NULL,
-  `Title` varchar(15) NOT NULL
+  `CategoryID` int NOT NULL,
+  `Title` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `DemoUrl` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`CategoryID`, `Title`) VALUES
-(1, 'Pizza'),
-(2, 'Burger'),
-(101, 'Pizza');
+INSERT INTO `category` (`CategoryID`, `Title`, `DemoUrl`) VALUES
+(1, 'Pizza', ''),
+(2, 'Burger', ''),
+(101, 'Pizza', '');
 
 -- --------------------------------------------------------
 
@@ -69,12 +70,12 @@ INSERT INTO `category` (`CategoryID`, `Title`) VALUES
 --
 
 CREATE TABLE `delivery` (
-  `DeliveryID` int(5) NOT NULL,
-  `OrderID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `Address` text NOT NULL,
-  `Status` text NOT NULL,
-  `Timeliine` int(10) NOT NULL
+  `DeliveryID` int NOT NULL,
+  `OrderID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `Address` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Status` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Timeliine` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -92,11 +93,11 @@ INSERT INTO `delivery` (`DeliveryID`, `OrderID`, `UserID`, `Address`, `Status`, 
 --
 
 CREATE TABLE `faqs` (
-  `FAQID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `Question` text NOT NULL,
-  `Answer` text NOT NULL,
-  `Pending` varchar(30) NOT NULL
+  `FAQID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `Question` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Answer` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Pending` varchar(30) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -115,14 +116,14 @@ INSERT INTO `faqs` (`FAQID`, `UserID`, `Question`, `Answer`, `Pending`) VALUES
 --
 
 CREATE TABLE `food` (
-  `FoodID` int(5) NOT NULL,
-  `CatagoryID` int(5) NOT NULL,
-  `RestaurantID` int(5) NOT NULL,
-  `Name` varchar(30) NOT NULL,
-  `Description` text NOT NULL,
-  `Price` int(5) NOT NULL,
-  `ImageURL` text NOT NULL,
-  `Nutrician` varchar(150) NOT NULL
+  `FoodID` int NOT NULL,
+  `CatagoryID` int NOT NULL,
+  `RestaurantID` int NOT NULL,
+  `Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Price` int NOT NULL,
+  `ImageURL` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Nutrician` varchar(150) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -130,8 +131,8 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`FoodID`, `CatagoryID`, `RestaurantID`, `Name`, `Description`, `Price`, `ImageURL`, `Nutrician`) VALUES
-(141, 101, 111, 'Italian Pizza', 'toping of tomato and onion with cheese and with pizza sauce , little bit spicy and tasty', 0, 'pizzaurl ', 'protin : 30 gm\r\ncalories : 200cal\r\nfat : 5%\r\nyou will get good amount of protin from this food item'),
-(161, 101, 111, 'Seven chesee pizza', 'toping of tomato and onion with cheese and with pizza sauce , little bit spicy and tasty, seven big topings of cheese', 150, 'sevenchessespizzaurl ', 'protin : 430 gm\r\ncalories : 1200cal\r\nfat : 15%\r\nyou will get good amount of protin from this food item and fat also');
+(141, 101, 111, 'Italian Pizza', 'toping of tomato and onion with cheese and with pizza sauce , little bit spicy and tasty', 149, 'Assets/pizza.png', 'protin : 30 gm\r\ncalories : 200cal\r\nfat : 5%\r\nyou will get good amount of protin from this food item'),
+(161, 101, 111, 'Seven chesee pizza', 'Pizza, dish of Italian origin consisting of a flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other ingredients, baked quickly usually, in a ...', 199, 'Assets/pizza.png', 'protin : 430 gm\r\ncalories : 1200cal\r\nfat : 15%\r\nyou will get good amount of protin from this food item and fat also');
 
 -- --------------------------------------------------------
 
@@ -140,11 +141,11 @@ INSERT INTO `food` (`FoodID`, `CatagoryID`, `RestaurantID`, `Name`, `Description
 --
 
 CREATE TABLE `food_rating` (
-  `FRID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `RestaurantID` int(5) NOT NULL,
-  `Star` int(5) NOT NULL,
-  `Description` varchar(50) NOT NULL
+  `FRID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `RestaurantID` int NOT NULL,
+  `Star` int NOT NULL,
+  `Description` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -163,11 +164,11 @@ INSERT INTO `food_rating` (`FRID`, `UserID`, `RestaurantID`, `Star`, `Descriptio
 --
 
 CREATE TABLE `hotel_rating` (
-  `HRID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `RestaurantID` int(5) NOT NULL,
-  `Star` int(5) NOT NULL,
-  `Description` varchar(50) NOT NULL
+  `HRID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `RestaurantID` int NOT NULL,
+  `Star` int NOT NULL,
+  `Description` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -186,13 +187,13 @@ INSERT INTO `hotel_rating` (`HRID`, `UserID`, `RestaurantID`, `Star`, `Descripti
 --
 
 CREATE TABLE `order` (
-  `OrderID` int(5) NOT NULL,
-  `UserID` int(5) NOT NULL,
-  `FoodID` int(5) NOT NULL,
-  `RestaurantID` int(5) NOT NULL,
-  `Status` varchar(50) NOT NULL,
-  `Timestamp` int(10) NOT NULL,
-  `Total` int(6) NOT NULL
+  `OrderID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `FoodID` int NOT NULL,
+  `RestaurantID` int NOT NULL,
+  `Status` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `Timestamp` int NOT NULL,
+  `Total` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -211,11 +212,11 @@ INSERT INTO `order` (`OrderID`, `UserID`, `FoodID`, `RestaurantID`, `Status`, `T
 --
 
 CREATE TABLE `restaurant` (
-  `RestaurantID` int(5) NOT NULL,
-  `Name` text NOT NULL,
-  `Description` text NOT NULL,
-  `Phone` int(10) NOT NULL,
-  `Address` text NOT NULL
+  `RestaurantID` int NOT NULL,
+  `Name` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Phone` int NOT NULL,
+  `Address` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -234,12 +235,12 @@ INSERT INTO `restaurant` (`RestaurantID`, `Name`, `Description`, `Phone`, `Addre
 --
 
 CREATE TABLE `user` (
-  `UserID` int(5) NOT NULL,
-  `Name` varchar(30) NOT NULL,
-  `Email` varchar(15) NOT NULL,
-  `Password` varchar(15) NOT NULL,
-  `PhoneNo` varchar(10) NOT NULL,
-  `Address` varchar(50) NOT NULL
+  `UserID` int NOT NULL,
+  `Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `Email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Password` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `PhoneNo` varchar(13) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Address` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -247,8 +248,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`UserID`, `Name`, `Email`, `Password`, `PhoneNo`, `Address`) VALUES
-(1, 'Yuvraj Brahmbhatt', 'yuvraj@gmail.co', 'yuvi23', '0123456789', 'Mehsana, Gujarat , India (384002)'),
-(2, 'Soham', 'soham@gmail.com', 'soham123', '0123456789', 'Shreeji villa,Ankleshwar');
+(1, 'Yuvraj Brahmbhatt', 'yuvraj@gmail.com', 'yuvi23', '0123456789', 'Mehsana, Gujarat , India (384002)'),
+(2, 'SohamSinh', 'soham@gmail.com', 'soham123', '0123456789', 'Shreeji villa,Ankleshwar');
 
 --
 -- Indexes for dumped tables

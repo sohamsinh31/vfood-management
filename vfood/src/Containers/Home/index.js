@@ -14,7 +14,7 @@ const Home = () => {
       .then((responseData) => {
         if (responseData) {
           setData(responseData);
-          console.log(responseData);
+          // console.log(responseData);
         }
       })
       .catch((error) => {
