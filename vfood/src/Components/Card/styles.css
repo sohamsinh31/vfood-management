@@ -4,22 +4,24 @@
   }
 }
 
-.foodImage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.goldtxt {
+  background: -webkit-linear-gradient(#d4cf4c, #eeeb90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.bottom{
+
+.foodImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightText {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .vl {
   float: left;
-  border-left: 6px solid rgb(183, 223, 21);
-  height: 29px;
-}
-.goldtxt {
-  background: -webkit-linear-gradient(#D4CF4C,#eeeb90);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-left: 6px solid;
+  height: 32px;
 }

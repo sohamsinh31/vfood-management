@@ -1,10 +1,10 @@
 import React from 'react'
 import "./styles.css"
 
-const Back = () => {
+const Back = ({ onClick = null }) => {
   return (
     <div>
-      <img src='Assets/backbutton.png' alt='' className='backbtn'/>
+      <img src='Assets/BackButton.png' onClick={onClick ? () => onClick() : null} alt='' className='backbtn' />
     </div>
   )
 }

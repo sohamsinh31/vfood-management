@@ -1,15 +1,25 @@
 .demo {
-    width: 100%;
+  width: 100%;
 }
 
 .back {
-    position: absolute;
-    top: 13px;
-    left: 13px;
+  position: absolute;
+  top: 13px;
+  left: 13px;
 }
 
-.goldt {
-    background: -webkit-linear-gradient(#D4CF4C,#eeeb90);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.descTxt {
+  background: -webkit-linear-gradient(#d4cf4c, #eeeb90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  float: left;
+  margin-top: 0.3%;
+  margin-left: 2.2px;
+}
+
+.descVal {
+  margin-top: -3%;
+  float: left;
+  text-align: left;
+  margin-left: 2.2px;
+}
