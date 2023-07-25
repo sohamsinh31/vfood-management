@@ -5,7 +5,7 @@ const db = require("../Connection/connect.js")
 
 
 route.post('/', (req, res) => {
-  const data = req.body; 
+  const data = req.body;
   let sql = 'INSERT INTO food SET ?';
   let query = db.query(sql, data, (err, result) => {
     if (err) throw err;
@@ -24,11 +24,10 @@ route.post('/', (req, res) => {
 //   });
 
 route.get('/', (req, res) => {
-  let condition = ""; 
-  console.log(req.query.FoodID + "\n\n")  
-  if (req.query.FoodID) {
-    condition = `WHERE foodId = ${req.query.FoodID}`; 
-  }  
+  let condition = "";
+  if (req.query.id) {
+    condition = `WHERE foodId = ${req.query.id}`;
+  }
   let sql = `SELECT * FROM food ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
@@ -36,7 +35,7 @@ route.get('/', (req, res) => {
     res.json(results);
   });
 });
-  
+
 
 
 

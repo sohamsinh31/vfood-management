@@ -23,12 +23,12 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={login ? (<Home />) : (<Login />)} />
-                    <Route path="/description" element={login ? (<Home />) : (<Description />)} />
-                    <Route path="/info" element={login ? (<Home />) : (<Info />)} />
+                    <Route path="/description" element={login ? (<Description />) : (<Login />)} />
+                    <Route path="/info" element={login ? (<Info />) : (<Login />)} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/faq" element={login ? (<Home />) : (<Faq />)} />
-                    <Route path="/profile" element={login ? (<Home />) : (<Profile />)} />
+                    <Route path="/faq" element={login ? (<faq />) : (<Login />)} />
+                    <Route path="/profile" element={login ? (<Profile />) : (<Login />)} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -56,20 +56,8 @@ router.post('/fetch', (req, res) => {
 router.get('/', (req, res) => {
   let conditions = []; // An array to store individual conditions
 
-  if (req.query.UserID) {
-    conditions.push(`userId = ${req.query.UserID}`);
-  }
-
-  if (req.query.email) {
-    conditions.push(`Email = '${req.query.email}'`);
-  }
-
-  if (req.query.username) {
-    conditions.push(`Name = '${req.query.username}'`);
-  }
-
-  if (req.query.password) {
-    conditions.push(`Password = '${req.query.password}'`);
+  if (req.query.id) {
+    conditions.push(`userId = ${req.query.id}`);
   }
 
   // Combine all conditions using 'AND' to form the WHERE clause

@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { url, port } from "./Constant"
 
-
-
-
-const getData = async () => {
+const getData = async (id = null) => {
     try {
-        const response = await fetch(url + port + "/hotel");
+        const response = await fetch(url + port + (id ? "/hotel?id=" + id : "/hotel"));
         const data = await response.json();
         return data;
     } catch (error) {

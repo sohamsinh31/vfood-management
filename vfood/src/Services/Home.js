@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { url, port } from "./Constant"
 
 
-const getData = async () => {
+const getData = async (id = null) => {
     try {
-        const response = await fetch(url + port + "/food");
+        const response = await fetch(url + port + (id ? "/food?id=" + id : "/food"));
         const data = await response.json();
         return data;
     } catch (error) {
@@ -33,4 +33,4 @@ const postData = async (data) => {
     }
 }
 
-export { getData ,postData };
+export { getData, postData };

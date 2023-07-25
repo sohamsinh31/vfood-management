@@ -26,11 +26,10 @@ router.post('/', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  let condition = ""; 
-  console.log(req.query.RestaurantID + "\n\n")  
-  if (req.query.RestaurantID) {
-    condition = `WHERE restaurantId = ${req.query.RestaurantID}`; 
-  }  
+  let condition = "";
+  if (req.query.id) {
+    condition = `WHERE restaurantId = ${req.query.id}`;
+  }
   let sql = `SELECT * FROM restaurant ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;

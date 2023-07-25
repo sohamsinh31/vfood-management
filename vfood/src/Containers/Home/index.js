@@ -28,7 +28,7 @@ const Home = () => {
       <Filter />
       <div className='MainHome'>
         {data.map((item) => (
-          <Card height={"auto"} width={"98%"}>
+          <Card key={item.FoodID} height={"auto"} width={"98%"}>
             <InnerCard
               key={item.FoodID}
               imageurl={item.ImageURL}
