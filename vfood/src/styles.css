@@ -1,12 +1,18 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('Assets/fonts/static/Inter-Regular.ttf') format('truetype');
-    /* Add more src declarations for different font formats if available */
-  }
-  
+  font-family: 'CustomFont';
+  src: url('Assets/fonts/static/Inter-Regular.ttf') format('truetype');
+  /* Add more src declarations for different font formats if available */
+}
+
+@font-face {
+  font-family: 'CustomFontBold';
+  src: url('Assets/fonts/static/Inter-Bold.ttf') format('truetype');
+  /* Add more src declarations for different font formats if available */
+}
+
 body {
-    background-image: linear-gradient(#2a2a2b,#101010);
-    background-repeat: no-repeat;
-    color: white;
-    font-family: 'CustomFont'
+  background-image: linear-gradient(#2a2a2b, #101010);
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'CustomFont'
 }

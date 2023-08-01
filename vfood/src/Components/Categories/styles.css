@@ -1,0 +1,26 @@
+.catediv {
+    width: 52px;
+    height: 52px;
+    position: relative;
+    margin-top: 17px;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.upper {
+    position: absolute;
+    top: 41.8%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+.catetext {
+    font-family: 'CustomFontBold';
+    margin-top: 0 !important;
+    margin-left: 6% !important;
+    font-weight: 900;
+    background: -webkit-linear-gradient(#8B9E15, #B5C26A,white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

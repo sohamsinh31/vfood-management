@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const Card = ({ height, width, children, maxHeight = null, onClick = null }) => {
+const Card = ({ height, width, children, maxHeight = null, onClick = null, position = null }) => {
   return (
     <div
       onClick={onClick ? () => onClick() : null}
@@ -17,6 +17,7 @@ const Card = ({ height, width, children, maxHeight = null, onClick = null }) => 
         marginTop: '15px',
         maxHeight: maxHeight,
         overflow: 'scroll',
+        position: position ? position : 'unset'
       }}
     >
       {children}

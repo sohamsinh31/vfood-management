@@ -9,6 +9,7 @@ import Description from './Containers/Description/Description';
 import Faq from './Containers/FAQ/Faq';
 import Profile from './Containers/Profile/Profile';
 import { Token } from './Services/Constant';
+import Test from './Components/Categories/Categories';
 
 const App = () => {
     const [login, setLogin] = useState(0);
@@ -27,6 +28,7 @@ const App = () => {
                     <Route path="/info" element={login ? (<Info />) : (<Login />)} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/test" element={<Test />} />
                     <Route path="/faq" element={login ? (<faq />) : (<Login />)} />
                     <Route path="/profile" element={login ? (<Profile />) : (<Login />)} />
                 </Routes>
