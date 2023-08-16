@@ -16,7 +16,6 @@ const Card = ({ height, width, children, maxHeight = null, onClick = null, posit
         borderRadius: '14px',
         marginTop: '15px',
         maxHeight: maxHeight,
-        overflow: 'scroll',
         position: position ? position : 'unset'
       }}
     >

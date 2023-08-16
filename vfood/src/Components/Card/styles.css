@@ -1,7 +1,11 @@
 @media (min-width: 768px) {
   .cardMain {
-    background-color: red;
+    overflow: hidden !important;
   }
+}
+
+.cardMain {
+  overflow: scroll;
 }
 
 .goldtxt {
