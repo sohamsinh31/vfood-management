@@ -9,8 +9,12 @@ router.post('/', (req, res) => {
   let sql = 'INSERT INTO user SET ?';
   let query = db.query(sql, data, (err, result) => {
     if (err) throw err;
-    console.log(result);
-    res.send('Inserted successfully');
+    // Get the rows that were inserted
+    let sql = 'SELECT * FROM user WHERE UserID = ?';
+    let query2 = db.query(sql, [result.insertId], (err, result2) => {
+      if (err) throw err;
+      res.send(result2);
+    });
   });
 });
 

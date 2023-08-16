@@ -20,12 +20,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 50%;
-    margin-top: 30%;
+    margin-top: 28%;
     bottom: 5%;
 }
 
 .submit {
-    margin-top: 31%;
+    margin-top: 29%;
     font-size: larger;
     font-weight: bolder;
     float: right;
@@ -40,7 +40,7 @@
 
 .signin{
     float: left;
-    margin-top: 31%;
+    margin-top: 29%;
 
 }
 
