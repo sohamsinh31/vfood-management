@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb5ubuntu1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 23, 2023 at 10:14 AM
--- Server version: 8.0.33-0ubuntu0.22.04.2
--- PHP Version: 8.1.2-1ubuntu2.13
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2023 at 02:36 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `CartID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `FoodID` int NOT NULL
+  `CartID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `FoodID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -49,9 +49,9 @@ INSERT INTO `cart` (`CartID`, `UserID`, `FoodID`) VALUES
 --
 
 CREATE TABLE `category` (
-  `CategoryID` int NOT NULL,
-  `Title` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
-  `DemoUrl` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `CategoryID` int(11) NOT NULL,
+  `Title` varchar(15) NOT NULL,
+  `DemoUrl` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -70,12 +70,12 @@ INSERT INTO `category` (`CategoryID`, `Title`, `DemoUrl`) VALUES
 --
 
 CREATE TABLE `delivery` (
-  `DeliveryID` int NOT NULL,
-  `OrderID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `Address` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Status` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Timeliine` int NOT NULL
+  `DeliveryID` int(11) NOT NULL,
+  `OrderID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `Address` text NOT NULL,
+  `Status` text NOT NULL,
+  `Timeliine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -93,11 +93,11 @@ INSERT INTO `delivery` (`DeliveryID`, `OrderID`, `UserID`, `Address`, `Status`, 
 --
 
 CREATE TABLE `faqs` (
-  `FAQID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `Question` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Answer` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Pending` varchar(30) COLLATE utf8mb4_general_ci NOT NULL
+  `FAQID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `Question` text NOT NULL,
+  `Answer` text NOT NULL,
+  `Pending` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -116,14 +116,14 @@ INSERT INTO `faqs` (`FAQID`, `UserID`, `Question`, `Answer`, `Pending`) VALUES
 --
 
 CREATE TABLE `food` (
-  `FoodID` int NOT NULL,
-  `CatagoryID` int NOT NULL,
-  `RestaurantID` int NOT NULL,
-  `Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Price` int NOT NULL,
-  `ImageURL` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Nutrician` varchar(150) COLLATE utf8mb4_general_ci NOT NULL
+  `FoodID` int(11) NOT NULL,
+  `CatagoryID` int(11) NOT NULL,
+  `RestaurantID` int(11) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `Description` text NOT NULL,
+  `Price` int(11) NOT NULL,
+  `ImageURL` text NOT NULL,
+  `Nutrician` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -141,11 +141,11 @@ INSERT INTO `food` (`FoodID`, `CatagoryID`, `RestaurantID`, `Name`, `Description
 --
 
 CREATE TABLE `food_rating` (
-  `FRID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `RestaurantID` int NOT NULL,
-  `Star` int NOT NULL,
-  `Description` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `FRID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `RestaurantID` int(11) NOT NULL,
+  `Star` int(11) NOT NULL,
+  `Description` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -164,11 +164,11 @@ INSERT INTO `food_rating` (`FRID`, `UserID`, `RestaurantID`, `Star`, `Descriptio
 --
 
 CREATE TABLE `hotel_rating` (
-  `HRID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `RestaurantID` int NOT NULL,
-  `Star` int NOT NULL,
-  `Description` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `HRID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `RestaurantID` int(11) NOT NULL,
+  `Star` int(11) NOT NULL,
+  `Description` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -187,13 +187,13 @@ INSERT INTO `hotel_rating` (`HRID`, `UserID`, `RestaurantID`, `Star`, `Descripti
 --
 
 CREATE TABLE `order` (
-  `OrderID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `FoodID` int NOT NULL,
-  `RestaurantID` int NOT NULL,
-  `Status` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `Timestamp` int NOT NULL,
-  `Total` int NOT NULL
+  `OrderID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `FoodID` int(11) NOT NULL,
+  `RestaurantID` int(11) NOT NULL,
+  `Status` varchar(50) NOT NULL,
+  `Timestamp` int(11) NOT NULL,
+  `Total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -212,21 +212,22 @@ INSERT INTO `order` (`OrderID`, `UserID`, `FoodID`, `RestaurantID`, `Status`, `T
 --
 
 CREATE TABLE `restaurant` (
-  `RestaurantID` int NOT NULL,
-  `Name` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `Phone` int NOT NULL,
-  `Address` text COLLATE utf8mb4_general_ci NOT NULL
+  `RestaurantID` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Description` text NOT NULL,
+  `Phone` int(11) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `Address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `restaurant`
 --
 
-INSERT INTO `restaurant` (`RestaurantID`, `Name`, `Description`, `Phone`, `Address`) VALUES
-(1, 'Lords Plaza', 'a very big and 4 story building 5 star hotel only for rich poeple gareeb are not allowed ', 0, 'Ankleshwar'),
-(111, 'Lords Plaza', 'a very big and 4 story building 5 star hotel only for rich poeple gareeb are not allowed ', 0, 'Ankleshwar'),
-(211, 'Hotel Decent', 'affordable hotel and good stay and situated at center of the city', 12248455, 'Ankleshwar');
+INSERT INTO `restaurant` (`RestaurantID`, `Name`, `Description`, `Phone`, `city`, `Address`) VALUES
+(1, 'Lords Plaza', 'a very big and 4 story building 5 star hotel only for rich poeple gareeb are not allowed ', 0, 'Ankleshwar', 'Ankleshwar'),
+(111, 'Lords Plaza', 'a very big and 4 story building 5 star hotel only for rich poeple gareeb are not allowed ', 0, 'Ankleshwar', 'Ankleshwar'),
+(211, 'Hotel Decent', 'affordable hotel and good stay and situated at center of the city', 12248455, 'Ankleshwar', 'Ankleshwar');
 
 -- --------------------------------------------------------
 
@@ -235,12 +236,12 @@ INSERT INTO `restaurant` (`RestaurantID`, `Name`, `Description`, `Phone`, `Addre
 --
 
 CREATE TABLE `user` (
-  `UserID` int NOT NULL,
-  `Name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `Email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Password` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
-  `PhoneNo` varchar(13) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Address` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `UserID` int(11) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `Password` varchar(15) NOT NULL,
+  `PhoneNo` varchar(13) NOT NULL,
+  `Address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

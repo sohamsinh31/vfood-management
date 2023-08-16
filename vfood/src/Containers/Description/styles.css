@@ -23,3 +23,43 @@
   text-align: left;
   margin-left: 2.2px;
 }
+
+.buynow {
+  margin-left: 2.2px;
+  margin-top: 5%;
+  width: 83px;
+  /* height: 123px; */
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(140deg, #2D1555 0%, rgba(152, 90, 254, 0.49) 100%);
+  padding: 2%;
+  position: relative;
+}
+
+.innerBuyEclipse {
+  width: 64px;
+  height: 56px;
+  flex-shrink: 0;
+  margin: 12%;
+}
+
+.buyimage {
+  position: absolute;
+  top: 31.8%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+}
+
+.textbuy {
+  width: 61px;
+  height: 17.524px;
+  flex-shrink: 0;
+  margin: 0 27%;
+  margin-top: -1%;
+}
+
+.moreInfo {
+  margin-top: 8%;
+  width: 80px;
+  height: 28px;
+}
