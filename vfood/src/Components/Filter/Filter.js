@@ -12,6 +12,7 @@ const Filter = () => {
             </Card>
             <div className="v2"></div>
             <Categories imgurl={"Assets/pizza3.png"} text={"PIZZA"} />
+            <Categories imgurl={"Assets/samosa.png"} text={"Samosa"} />
         </div>
     )
 }
