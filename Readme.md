@@ -18,7 +18,7 @@ Technology used :\-
 
 The home page consist FILTER SEARCH BAR CART PROFILE NEAR LOCATION FAVORITE
 
-SOFTWARE UI/UX degine
+SOFTWARE UI/UX degine:-
 
 ![](img/Presentation19.png)
 
