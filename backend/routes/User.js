@@ -73,6 +73,7 @@ router.get('/', (req, res) => {
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
     res.json(results);
+    db.end();
   });
 });
 
