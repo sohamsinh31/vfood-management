@@ -60,4 +60,4 @@ app.get('/',(req,res)=>{
     res.send('We are on home')
 });
 
-app.listen(5000)
+app.listen(5050)
