@@ -3,6 +3,8 @@ import './styles.css'
 import Card from '../../Components/Card/Card'
 import { postData } from '../../Services/SignIn';
 import { Token } from '../../Services/Constant';
+import { FcNext } from "react-icons/fc";
+import { IconContext } from 'react-icons';
 
 const Login = () => {
 
@@ -42,9 +44,11 @@ const Login = () => {
         </Card>
       </div>
       <div className='outer'>
-        <h2 className='siginLink'>Sign in</h2>
-        <button className='submitLogin' onClick={doSubmit}>-&gt;</button>
-        <div style={{ clear: 'both' }} />
+        <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+          <h2 className='siginLink'>Sign in</h2>
+          <button className='submitLogin' onClick={doSubmit}><FcNext color='white'/></button>
+          <div style={{ clear: 'both' }} />
+        </IconContext.Provider>
       </div>
       <div className='outer2'>
         <h2 className='signup'>Sign up</h2>

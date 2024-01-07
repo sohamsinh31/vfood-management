@@ -1,9 +1,19 @@
-.wtext{
-    margin-left: 10% !important;
+/* 
+Author: Sohamsinh Borasia
+Github: https://github.com/sohamsinh31
+File: styles.css (for login page)
+Description: Brief description of the file's purpose.
+License: Your chosen license: PRIVATE
+*/
+
+/* This is for welcome text at uppper */
+.wtext {
+    margin-left: 6% !important;
     margin: 28px;
     font-weight: 900;
 }
 
+/* This is for input for credentials */
 .loginMain {
     margin-top: 30%;
     margin-left: 5%;
@@ -12,11 +22,12 @@
 }
 
 .siginLink {
-    margin-top: 35%;
+    margin-top: 30%;
     float: left;
 }
+
 .submitLogin {
-    margin-top: 31%;
+    margin-top: 26%;
     font-size: larger;
     font-weight: bolder;
     float: right;
@@ -35,22 +46,48 @@
 }
 
 .outer {
-    margin-top: 20%;
-    margin-left: 10%;
+    margin-top: 17%;
+    margin-left: 6.1%;
     margin-right: 10%;
 }
 
-.outer2{
-    margin-left: 10%;
+.outer2 {
+    margin-left: 6.1%;
     margin-right: 10%;
 }
 
 .signup {
     float: left;
-    margin-top: 20%;
+    margin-top: 17%;
 }
 
 .forgot {
     float: right;
-    margin-top: 23%;
+    margin-top: 20%;
+}
+
+@media only screen and (min-width: 600px) {
+    .loginMain {
+        margin-top: 10%;
+    }
+
+    .siginLink {
+        margin-top: 10%;
+    }
+    
+    .submitLogin {
+        margin-top: 10%;
+    }
+
+    .outer {
+        margin-top: 0;
+    }
+
+    .signup {
+        margin-top: 5%;
+    }
+
+    .forgot {
+        margin-top: 8%;
+    }
 }
