@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css';
 
 const Card = ({ height, width, children, maxHeight = null, onClick = null, position = null, flex = null, type = null }) => {
-  console.log(flex," ",width," ",type);
   return (
     <div
       onClick={onClick ? () => onClick() : null}

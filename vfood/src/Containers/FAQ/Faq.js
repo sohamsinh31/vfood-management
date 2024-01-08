@@ -6,10 +6,16 @@ import { TbWorldSearch } from "react-icons/tb";
 import { IoSend } from "react-icons/io5";
 
 const Faq = () => {
+
+    const handleCardClick = () => {
+        // Redirect to the description page with the foodId
+        window.location.href = `/`;
+    };
+
     return (
         <div className='container'>
             <div className='header'>
-                <Back />
+                <Back onClick={handleCardClick}/>
                 <div className='text' ><h2>F.A.Q</h2></div>
             </div>
             <div className='ask'>
