@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
 
-const Card = ({ height, width, children, maxHeight = null, onClick = null, position = null }) => {
+const Card = ({ height, width, children, maxHeight = null, onClick = null, position = null, flex = null, type = null }) => {
+  console.log(flex," ",width," ",type);
   return (
     <div
       onClick={onClick ? () => onClick() : null}
@@ -16,7 +17,9 @@ const Card = ({ height, width, children, maxHeight = null, onClick = null, posit
         borderRadius: '14px',
         marginTop: '15px',
         maxHeight: maxHeight,
-        position: position ? position : 'unset'
+        position: position ? position : 'unset',
+        display: flex ? flex + "!important": '',
+        flexDirection: type ? type : '',
       }}
     >
       {children}

@@ -8,6 +8,26 @@
   color: aqua;
 }
 
+.sendimg {
+  padding: 4%;
+  color: aqua;
+}
+
+.askq {
+  text-align: center;
+  bottom: 5%;
+  padding: 9%;
+  padding-left: 0 !important;
+  margin: 3%;
+  text-wrap: nowrap;
+}
+
+.ask > .cardMain {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -16,11 +36,7 @@
 .previous {
   text-align: center;
 }
-.ask > .cardMain {
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-}
+
 p {
   margin-left: 1rem;
   text-align: left;

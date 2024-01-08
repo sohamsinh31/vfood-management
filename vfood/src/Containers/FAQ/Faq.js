@@ -3,6 +3,7 @@ import './styles.css'
 import Card from '../../Components/Card/Card'
 import Back from '../../Components/BackButton/Back'
 import { TbWorldSearch } from "react-icons/tb";
+import { IoSend } from "react-icons/io5";
 
 const Faq = () => {
     return (
@@ -15,8 +16,8 @@ const Faq = () => {
                 <Card>
                     <div className='bimg'><TbWorldSearch size={25} />
                     </div>
-                    <div className='headeroffaq'><h2>ASK QUESTIONS</h2></div>
-                    <div className='sendimg'><img src="Assets/send.png" /></div>
+                    <div><h4 className='askq'>ASK QUESTIONS</h4></div>
+                    <div className='sendimg'><IoSend size={25} /></div>
                 </Card>
             </div>
             <div className='quesblock'>
