@@ -1,6 +1,13 @@
 .container {
   height: 100hv;
 }
+
+.bimg {
+  padding: 4%;
+  padding-left: 2% !important;
+  color: aqua;
+}
+
 .header {
   display: flex;
   flex-direction: row;
