@@ -7,11 +7,11 @@ const mysql = require('mysql2');
 router.post('/', (req, res) => {
   const data = req.body;
   let sql = 'INSERT INTO user SET ?';
-  let query = db.query(sql, data, (err, result) => {
+  db.query(sql, data, (err, result) => {
     if (err) throw err;
     // Get the rows that were inserted
     let sql = 'SELECT * FROM user WHERE UserID = ?';
-    let query2 = db.query(sql, [result.insertId], (err, result2) => {
+    db.query(sql, [result.insertId], (err, result2) => {
       if (err) throw err;
       res.send(result2);
     });
@@ -70,10 +70,10 @@ router.get('/', (req, res) => {
   let sql = `SELECT * FROM \`user\` ${conditionString}`;
 
 
-  let query = db.query(sql, (err, results) => {
+  db.query(sql, (err, results) => {
     if (err) throw err;
     res.json(results);
-    db.end();
+    // db.end();
   });
 });
 

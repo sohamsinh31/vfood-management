@@ -13,15 +13,15 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   float: left;
-  margin-top: 0.3%;
-  margin-left: 2.2px;
+  margin-top: 0.9%;
+  margin-left: 3.1%;
 }
 
 .descVal {
-  margin-top: -3%;
+  margin-top: 0%;
   float: left;
   text-align: left;
-  margin-left: 2.2px;
+  margin-left: 3.1%;
 }
 
 .buynow {
