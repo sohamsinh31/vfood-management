@@ -1,12 +1,12 @@
-import React from 'react';
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import '@babel/polyfill';
+import React, { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client'; // Correct import
+
 import App from './App';
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const rootElement = document.getElementById('root');
 
-root.render(
+ReactDOM.createRoot(rootElement).render(
   <StrictMode>
     <App />
   </StrictMode>

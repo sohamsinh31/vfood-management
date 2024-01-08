@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { url, port } from "./Constant"
 
-
 const getData = async (id = null) => {
     try {
         const response = await fetch(url + port + (id ? "/food?id=" + id : "/food"));
