@@ -5,6 +5,7 @@ import Text from '../../Components/Welcome/Text';
 import InnerCard from '../../Components/Card/InnerCard';
 import Filter from '../../Components/Filter/Filter';
 import { getData, postData } from '../../Services/Home';
+import { Grid } from '@mui/material';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -32,20 +33,22 @@ const Home = () => {
       <Text />
       <Filter />
       <div className="MainHome">
-        {data.map((item) => (
-          <Card
-            key={item.FoodID}
-            height={'auto'}
-            width={'98%'}
-            onClick={() => handleCardClick(item.FoodID)}
-          >
-            <InnerCard
-              imageurl={item.ImageURL}
-              text1={item.Name}
-              text2={item.Price + '₹'}
-            />
-          </Card>
-        ))}
+        <Grid container spacing={2}>
+          {data.map((item) => (
+            <Card
+              key={item.FoodID}
+              height={'auto'}
+              // width={'98%'}
+              onClick={() => handleCardClick(item.FoodID)}
+            >
+              <InnerCard
+                imageurl={item.ImageURL}
+                text1={item.Name}
+                text2={item.Price + '₹'}
+              />
+            </Card>
+          ))}
+        </Grid>
       </div>
     </div>
   );

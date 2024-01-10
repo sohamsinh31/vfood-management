@@ -30,7 +30,7 @@ const Faq = () => {
                 <div className='ques'>
                     <Card>
                         <div><p>Can i eat with alcohol</p></div>
-                        <div><img src="Assets/downarrow 2.png" /></div>
+                        <div><img src="../Assets/downarrow 2.png" /></div>
                     </Card>
                     <Card>
                         <div><p>No, You can’t eat with an alcohol because it interacts with alcohol and may lead to Serious heart conditions.</p></div>
@@ -40,19 +40,19 @@ const Faq = () => {
                 <div className='ques'>
                     <Card>
                         <div><p>Can i eat it with roti?</p></div>
-                        <div><img src="Assets/downarrow.png" /></div>
+                        <div><img src="../Assets/downarrow.png" /></div>
                     </Card>
                 </div>
                 <div className='ques'>
                     <Card>
                         <div><p>What are some common food allergies or dietary restrictions?</p></div>
-                        <div><img src="Assets/downarrow.png" /></div>
+                        <div><img src="../Assets/downarrow.png" /></div>
                     </Card>
                 </div>
                 <div className='ques'>
                     <Card>
                         <div><p>What are the health benefits of this food?</p></div>
-                        <div><img src="Assets/downarrow.png" /></div>
+                        <div><img src="../Assets/downarrow.png" /></div>
                     </Card>
                 </div>
 

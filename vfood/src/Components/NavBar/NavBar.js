@@ -1,12 +1,13 @@
 import React from 'react'
 import "./styles.css"
+import logo from "../../Assets/vfood.png"
 
-const NavBar = () => {
+const NavBar = () => {  
   return (
     <div className='mainNavbar'>
-      <img src="Assets/vfood.png" alt='logo' className='logoImage' />
+      <img src={logo} alt='logo' className='logoImage' />
       <input type='text' className='navInput' placeholder='SEARCH' />
-      <img src="Assets/menubutton.png" alt='Menu' className='menuImage' />
+      <img src="../../Assets/menubutton.png" alt='Menu' className='menuImage' />
     </div>
   )
 }

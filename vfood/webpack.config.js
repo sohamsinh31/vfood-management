@@ -14,12 +14,16 @@ module.exports = {
       {
         test: /\.(sass|less|css)$/,
         use: ['style-loader', 'css-loader', 'less-loader']
-      }, 
+      },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         exclude: /node_modules/,
         use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
-      } 
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|txt)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   resolve: {
@@ -35,7 +39,10 @@ module.exports = {
     favicon: './public/favicon.ico'
   })],
   devServer: {
-    static: path.resolve(__dirname, './dist'),
+    static: {
+      directory: path.resolve(__dirname, './dist'),
+      publicPath: '/'
+    },
     hot: true,
   },
 };
