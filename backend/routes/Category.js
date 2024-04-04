@@ -25,14 +25,14 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
   let condition = ""; 
-  console.log(req.query.CategoryID + "\n\n")  
+  // console.log(req.query.CategoryID + "\n\n")  
   if (req.query.CategoryID) {
     condition = `WHERE categoryId = ${req.query.CategoryID}`; 
   }  
   let sql = `SELECT * FROM category ${condition}`;
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
-    // console.log(results);
+    console.log(results);
     res.json(results);
   });
 });

@@ -11,6 +11,7 @@
 .upper {
     position: absolute;
     top: 41.8%;
+    width: 69px;
     left: 52%;
     transform: translate(-50%, -50%);
 }

@@ -33,12 +33,12 @@ const Home = () => {
       <Text />
       <Filter />
       <div className="MainHome">
-        <Grid container spacing={2}>
+        <Grid style={{marginLeft: '0.1%'}} container spacing={2}>
           {data.map((item) => (
             <Card
               key={item.FoodID}
               height={'auto'}
-              // width={'98%'}
+              width={'95%'}
               onClick={() => handleCardClick(item.FoodID)}
             >
               <InnerCard
