@@ -4,10 +4,6 @@
   }
 }
 
-.cardMain {
-  overflow: scroll;
-}
-
 .goldtxt {
   background: -webkit-linear-gradient(#d4cf4c, #eeeb90);
   -webkit-background-clip: text;
